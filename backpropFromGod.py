@@ -1,4 +1,4 @@
-#!/usr/bin/env ../venv.sh
+#!/usr/bin/python3
 
 import random
 import numpy as np
@@ -338,7 +338,7 @@ class FFANNRegressor(object):
                 err += self.update(x, y)
         return err / len(X)
 
-def testparity(): 
+def testparity():
     ''' YOU WILL USE BOSTON HOUSING ? '''
     # Test FFANNClassifier by solving a parity task.
     # n, dim = (500, 10)
@@ -354,11 +354,11 @@ def testparity():
     testD = list(zip(testX,testY))
     dim = 17
 
-    clf = FFANNRegressor(dim, 90, 1, learning_rate=0.01, l2_reg=False, dropout=False)    
+    clf = FFANNRegressor(dim, 90, 1, learning_rate=0.01, l2_reg=False, dropout=False)
     i = 0
     etrain=0.01
     try:
-        while etrain > .0001: 
+        while etrain > .0001:
 
             ''' HERE YOU WILL HAVE TO CODE YOUR TRAINING REGIMEN'''
             etrain = clf.fit_sgd(trainDX, trainDY,shuffle=True)
